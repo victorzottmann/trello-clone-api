@@ -16,6 +16,8 @@ class CardsController < ApplicationController
   # POST /cards
   def create
     @card = Card.new(card_params)
+    puts "@@@@@@ IN #CREATE ACTION. @@@@@@ @card:"
+    p @card
 
     if @card.save
       render json: @card, status: :created, location: @card
